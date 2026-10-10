@@ -1,0 +1,19 @@
+{
+  "name": "findback",
+  "version": "1.0.0",
+  "description": "FindBack — Smart Campus Lost & Found Management System",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently --names SERVER,CLIENT --prefix-colors cyan,green \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix client",
+    "test": "npm test --prefix server",
+    "seed": "node --conditions=node scripts/seed.js",
+    "fix-statuses": "node scripts/fix-statuses.js",
+    "reset-db": "node scripts/reset-database.js"
+  },
+  "devDependencies": {
+    "concurrently": "8.2.2"
+  }
+}
